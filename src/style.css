@@ -41,10 +41,9 @@ hr {
 
 #current-emoji {
     font-size: 80px;
-    color: aliceblue;
 }
 
-#current-min-temperature, #current-max-temperature {
+#current-min-temperature, #current-max-temperature, #week-day {
     font-size: 25px;
 }
 
@@ -60,4 +59,46 @@ hr {
 #celsius-link:hover, #fahrenheit-link:hover {
     text-shadow: 2px 2px aliceblue;
     color: rgb(240, 248, 255, 0);
+}
+
+#week-emoji {
+    font-size: 40px;
+}
+
+#week-temp-min, .week-temp-max {
+    font-size: 18px;
+}
+
+#max, #min {
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+#min {
+    background-color: rgb(3, 186, 252); 
+}
+
+#max {
+    background-color: rgba(255, 165, 0); 
+}
+
+#units {
+    position: relative; 
+    top: -5px;
+    font-size: 10px;
+    left: -2px
+}
+
+#current-units {
+    font-size: 15px;
+    position: relative;
+    top: -8px;
+    left: -2px
+}
+
+#now-units {
+    font-size: 30px;
+    position: relative;
+    top: -24px;
+    left: -5px
 }
