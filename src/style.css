@@ -1,3 +1,63 @@
+body {
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    margin: 200px;
+    color: aliceblue;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+}
+
+.weather-app {
+    max-width: 600 px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px 3px rgb(240, 248, 255, 0.25);
+    border-radius: 30px;
+}
+
 h1 {
-    color: red;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 70px;
+}
+
+ul {
+    margin-bottom: 7px;
+    padding: 0;
+    list-style-type: none;
+}
+
+hr {
+    margin: 0 auto;
+    color: rgb(207, 207, 207);
+    border-top: 2px solid;
+}
+
+#date {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+#current-emoji {
+    font-size: 80px;
+    color: aliceblue;
+}
+
+#current-min-temperature, #current-max-temperature {
+    font-size: 25px;
+}
+
+#current-temperature {
+    font-size: 60px;
+}
+
+#celsius-link, #fahrenheit-link {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#celsius-link:hover, #fahrenheit-link:hover {
+    text-shadow: 2px 2px aliceblue;
+    color: rgb(240, 248, 255, 0);
 }
