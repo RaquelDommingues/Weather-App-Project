@@ -14,12 +14,13 @@
     rel="stylesheet" 
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
     crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
     <div class="container">
         <div class="weather-app">
-            <h1>Lisbon</h1>
+            <h1 id="city"></h1>
             <ul>
                 <li id="date">
                     Date
@@ -47,7 +48,7 @@
                 <div class="col-4">
                     <ul id="current-temperature">
                         <li>
-                            <span>30</span>
+                            <span id="temperature">30</span>
                             <sup id="now-units">
                                 <span><a href="#" id="celsius-link">°C</a></span>
                                 <span>|</span>
