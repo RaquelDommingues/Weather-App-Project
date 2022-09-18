@@ -20,10 +20,30 @@
 <body>
     <div class="container">
         <div class="weather-app">
+            <form id="searchBar" class="mb-5">
+                <div class="row">
+                    <div class="col-9">
+                        <input 
+                        type="search" 
+                        placeholder="Location"
+                        autocomplete="off"
+                        class="form-control"
+                        id="city-input"/>
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" value="Search" class="btn btn-primary w-100"/>
+                    </div>
+                </div>
+            </form>
             <h1 id="city"></h1>
             <ul>
                 <li id="date">
-                    Date
+                </li>
+                <li class="description">
+                    Wind: <span  id="wind">condition</span> km/h
+                </li>
+                <li class="description">
+                    <span id="weather">Description</span>
                 </li>
                 <li>
                     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="current-emoji">
@@ -38,9 +58,9 @@
                         <li>
                             <span>17</span>
                             <sup id="current-units">
-                                <span><a href="#" id="celsius-link">°C</a></span>
+                                <span><a href="#" id="celsius-link1" class="celsius-link">°C</a></span>
                                 <span>|</span>
-                                <span><a href="#" id="fahrenheit-link">F</a></span>
+                                <span><a href="#" class="fahrenheit-link" id="fahrenheit-link1">F</a></span>
                             </sup>
                         </li>
                     </ul>
@@ -50,9 +70,9 @@
                         <li>
                             <span id="temperature">30</span>
                             <sup id="now-units">
-                                <span><a href="#" id="celsius-link">°C</a></span>
+                                <span><a href="#" id="celsius-link2" class="celsius-link">°C</a></span>
                                 <span>|</span>
-                                <span><a href="#" id="fahrenheit-link">F</a></span>
+                                <span><a href="#" class="fahrenheit-link" id="fahrenheit-link2">F</a></span>
                             </sup>
                         </li>
                     </ul>
@@ -65,9 +85,9 @@
                         <li>
                             <span>32</span>
                             <sup id="current-units">
-                                <span><a href="#" id="celsius-link">°C</a></span>
+                                <span><a href="#" id="celsius-link3" class="celsius-link">°C</a></span>
                                 <span>|</span>
-                                <span><a href="#" id="fahrenheit-link">F</a></span>
+                                <span><a href="#" class="fahrenheit-link" id="fahrenheit-link3">F</a></span>
                             </sup>
                         </li>
                     </ul>
@@ -86,9 +106,9 @@
                             <mark id="max">
                                 <span>23</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link4" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link4">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -96,9 +116,9 @@
                             <mark id="min">
                                 <span>14</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link5" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link5">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -116,9 +136,9 @@
                             <mark id="max">
                                 <span id="week-temp-max">19</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link6" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link6">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -126,9 +146,9 @@
                             <mark id="min">
                                 <span id="week-temp-min">12</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link7" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link7">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -146,9 +166,9 @@
                             <mark id="max">
                                 <span id="week-temp-max">10</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link8" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link8">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -156,9 +176,9 @@
                             <mark id="min">
                                 <span id="week-temp-min">5</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link9" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link9">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -176,9 +196,9 @@
                             <mark id="max">
                                 <span id="week-temp-max">15</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link10" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link10">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -186,9 +206,9 @@
                             <mark id="min">
                                 <span id="week-temp-min">9</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link11" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link11">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -206,9 +226,9 @@
                             <mark id="max">
                                 <span id="week-temp-max">17</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link12" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link12">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -216,9 +236,9 @@
                             <mark id="min">
                                 <span id="week-temp-min">12</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link13" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link13">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -236,9 +256,9 @@
                             <mark id="max">
                                 <span id="week-temp-max">21</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link14" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link14">F</a></span>
                                 </sup>
                             </mark>
                         </li>
@@ -246,9 +266,9 @@
                             <mark id="min">
                                 <span id="week-temp-min">12</span>
                                 <sup id="units">
-                                    <span><a href="#" id="celsius-link">°C</a></span>
+                                    <span><a href="#" id="celsius-link15" class="celsius-link">°C</a></span>
                                     <span>|</span>
-                                    <span><a href="#" id="fahrenheit-link">F</a></span>
+                                    <span><a href="#" class="fahrenheit-link" id="fahrenheit-link15">F</a></span>
                                 </sup>
                             </mark>
                         </li>

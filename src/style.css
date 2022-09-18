@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    margin: 200px;
+    margin: 50px;
     color: aliceblue;
     font-family: 'Comfortaa', cursive;
     text-align: center;
@@ -34,6 +34,10 @@ hr {
     border-top: 2px solid;
 }
 
+#weather {
+    text-transform: capitalize;
+}
+
 #date {
     margin-top: 0;
     font-size: 30px;
@@ -51,12 +55,12 @@ hr {
     font-size: 60px;
 }
 
-#celsius-link, #fahrenheit-link {
+.celsius-link, .fahrenheit-link {
     text-decoration: none;
     color: aliceblue;
 }
 
-#celsius-link:hover, #fahrenheit-link:hover {
+.celsius-link:hover, .fahrenheit-link:hover {
     text-shadow: 2px 2px aliceblue;
     color: rgb(240, 248, 255, 0);
 }
