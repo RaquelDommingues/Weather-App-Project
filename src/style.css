@@ -26,6 +26,24 @@ body {
     border-color: rgb(240, 248, 255, 0.25);
 }
 
+input::placeholder {
+    color: rgb(240, 248, 255, 0.5);
+}
+
+#city-input:focus{
+    box-shadow: none;
+}
+
+#Locate:hover, #Search:hover {
+	background-position: left;
+	color: white;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+#Locate:focus, #Search:hover {
+	outline: none;
+}
+
 #Search {
     position: relative;
     left: -20px;
