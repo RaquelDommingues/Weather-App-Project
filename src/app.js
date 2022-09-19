@@ -73,6 +73,7 @@ function search(city) {
     let form = document.querySelector("#searchBar");
     form.addEventListener("submit", handleSubmit);
 
+
 //Date
 
 function displayDate(response){
