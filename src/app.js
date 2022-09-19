@@ -20,8 +20,8 @@ function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description")
-    let iconElement = document.querySelector("#current-emoji");
     let windElement = document.querySelector("#wind")
+    let iconElement = document.querySelector("#current-emoji");
     celsiusTemperature = response.data.main.temp;
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;

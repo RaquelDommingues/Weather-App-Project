@@ -22,6 +22,10 @@ h1 {
     font-size: 70px;
 }
 
+li { 
+    text-transform: capitalize;
+}
+
 ul {
     margin-bottom: 7px;
     padding: 0;
