@@ -3,7 +3,7 @@ function displayWeatherCondition(response) {
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#description").innerHTML = response.data.weather[0].description;
-    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+    document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     let iconElement = document.querySelector("#current-emoji")
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description)
@@ -17,9 +17,6 @@ function displayWeatherCondition(response) {
   
   function getCurrentLocation() {
     navigator.geolocation.getCurrentPosition(searchLocation);
-  }
-  
-  function currentDate(){
     let now = new Date();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let day = days[now.getDay()];
@@ -34,9 +31,9 @@ function displayWeatherCondition(response) {
     }
     let date = document.querySelector("#date");
     date.innerHTML = `${day} ${hours}:${minutes}`;
-}
+  }
+
    
-    window.onload = currentDate();
     window.onload = getCurrentLocation();
 
 
@@ -50,7 +47,7 @@ function displayTemperature(response) {
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
-    windElement.innerHTML = Math.round(response.data.wind.speed);
+    windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description)
     let apiKey = "759f279cf01ddb58633aa7aca9c28922";
