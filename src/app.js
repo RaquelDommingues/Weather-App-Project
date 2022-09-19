@@ -2,6 +2,11 @@
 function displayWeatherCondition(response) {
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
+    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+    let iconElement = document.querySelector("#current-emoji")
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description)
   }
   
   function searchLocation(position) {
@@ -10,11 +15,30 @@ function displayWeatherCondition(response) {
     axios.get(apiUrl).then(displayWeatherCondition);
   }
   
-  function getCurrentLocation(event) {
+  function getCurrentLocation() {
     navigator.geolocation.getCurrentPosition(searchLocation);
   }
-
+  
+  function currentDate(){
+    let now = new Date();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[now.getDay()];
+    let hours = now.getHours();
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
+    let minutes = now.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+        
+    }
+    let date = document.querySelector("#date");
+    date.innerHTML = `${day} ${hours}:${minutes}`;
+}
+   
+    window.onload = currentDate();
     window.onload = getCurrentLocation();
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
