@@ -116,7 +116,7 @@ hr {
     font-size: 80px;
 }
 
-#current-min-temperature, #current-max-temperature, #week-day {
+#current-min-temperature, #current-max-temperature{
     font-size: 25px;
 }
 
@@ -134,24 +134,35 @@ hr {
     color: rgb(240, 248, 255, 0);
 }
 
+/*forecast*/
+
+
+.weather-forescast-date {
+    font-size: 20px;
+}
 #week-emoji {
     font-size: 40px;
 }
 
-#week-temp-min, .week-temp-max {
+.weather-forescast-temps {
     font-size: 18px;
+    text-align: center;
 }
 
-#max, #min {
+
+#max1, #min1 {
     color: aliceblue;
     border-radius: 10px;
+    text-align: center;
 }
 
-#min {
-    background-color: rgb(3, 186, 252); 
+#min1 {
+    position: relative;
+    top: 5px;
+    background-color: rgb(3, 186, 252);
 }
 
-#max {
+#max1 {
     background-color: #EC6E4C; 
 }
 
