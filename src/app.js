@@ -1,4 +1,8 @@
-//Default page
+//Locate me
+
+let iconElement = document.querySelector("#current-emoji")
+    iconElement.setAttribute("src", "");
+
 function displayWeatherCondition(response) {
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
@@ -6,7 +10,7 @@ function displayWeatherCondition(response) {
     document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     let iconElement = document.querySelector("#current-emoji")
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description)
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     let now = new Date();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let day = days[now.getDay()];
@@ -54,8 +58,9 @@ function displayTemperature(response) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
 }
+///////////////////////////////////////////////////
 
-//City
+//Search for a City
 function search(city) {
     let apiKey = "759f279cf01ddb58633aa7aca9c28922";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
