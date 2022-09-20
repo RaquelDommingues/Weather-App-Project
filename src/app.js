@@ -123,3 +123,41 @@ function displayCelsiusTemperature(event) {
 
 
 let celsiusTemperature = null;
+
+//Forecast
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat"];
+    days.forEach(function(day) {
+        forecastHTML = forecastHTML +
+        `
+        <div class="col-2">
+            <div class="weather-forescast-date">${day}</div>
+            <img 
+                src="http://openweathermap.org/img/wn/02d@2x.png" 
+                alt=""
+                width="80"
+            />
+            <div class="weather-forescast-temps">
+                <div class="max">
+                    <mark id="max1">14º</mark>
+                </div>
+                <div class="min">
+                    <mark id="min1">12º</mark>
+                </div>
+            </div>
+        </div>
+    `;
+    });
+
+    forecastHTML = forecastHTML + `
+</div>
+    `;
+    console.log(forecastHTML)
+    forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
