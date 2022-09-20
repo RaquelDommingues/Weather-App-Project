@@ -116,22 +116,13 @@ hr {
     font-size: 80px;
 }
 
-#current-min-temperature, #current-max-temperature{
+#current-min, #current-max, #current-min-temperature, #current-max-temperature {
+    text-align: center;
     font-size: 25px;
 }
 
 #current-temperature {
     font-size: 60px;
-}
-
-.celsius-link, .fahrenheit-link {
-    text-decoration: none;
-    color: aliceblue;
-}
-
-.celsius-link:hover, .fahrenheit-link:hover {
-    text-shadow: 2px 2px aliceblue;
-    color: rgb(240, 248, 255, 0);
 }
 
 /*forecast*/
@@ -154,6 +145,7 @@ hr {
     color: aliceblue;
     border-radius: 10px;
     text-align: center;
+    padding: 2px 10px;
 }
 
 #min1 {
@@ -173,11 +165,18 @@ hr {
     left: -2px
 }
 
-#current-units {
+.current-units {
     font-size: 15px;
     position: relative;
-    top: -8px;
+    top: -9px;
     left: -2px
+}
+
+.forecast-units {
+    position: relative;
+    top: 18px;
+    right: -5px;
+    font-size: 10px;
 }
 
 #now-units {

@@ -25,6 +25,7 @@ function displayWeatherCondition(response) {
     }
     let date = document.querySelector("#date");
     date.innerHTML = `${day} ${hours}:${minutes}`;
+    getForecast(response.data.coord);
   }
   
   function searchLocation(position) {
@@ -48,17 +49,30 @@ function getForecast(coordinates) {
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
+    let minTemperatureElement = document.querySelector("#current-min");
+    let maxTemperatureElement = document.querySelector("#current-max");
+    let minTempLabelElement = document.querySelector("#current-min-temperature");
+    let maxTempLabelElement = document.querySelector("#current-max-temperature");
+    let unitsElement = document.querySelector("#now-units");
+    let minUnitsElement = document.querySelector("#current-units-min");
+    let maxUnitsElement = document.querySelector("#current-units-max");
     let cityElement = document.querySelector("#city");
-    let descriptionElement = document.querySelector("#description")
-    let windElement = document.querySelector("#wind")
+    let descriptionElement = document.querySelector("#description");
+    let windElement = document.querySelector("#wind");
     let iconElement = document.querySelector("#current-emoji");
-    celsiusTemperature = response.data.main.temp;
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    minTemperatureElement.innerHTML = Math.round(response.data.main.temp_min);
+    maxTemperatureElement.innerHTML = Math.round(response.data.main.temp_max);
+    minTempLabelElement.innerHTML = `Min`;
+    maxTempLabelElement.innerHTML = `Max`;
+    unitsElement.innerHTML = `ºC`;
+    minUnitsElement.innerHTML = `ºC`;
+    maxUnitsElement.innerHTML = `ºC`;
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description)
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     let apiKey = "2ff29bed3181c3526c35cc5408037f85";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
@@ -71,8 +85,7 @@ function search(city) {
     let apiKey = "2ff29bed3181c3526c35cc5408037f85";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
-    axios.get(apiUrl).then(displayDate)
-    axios.get(apiUrl).then(displayTemperature)
+    axios.get(apiUrl).then(displayDate);
 }
   
     function handleSubmit(event) {
@@ -110,26 +123,6 @@ function displayDate(response){
     time.innerHTML = `${day} ${hours}:${minutes}`;
 }
 
-
-//Unit conversion
-
-
-function displayFahrenheitTemperature(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    let fahrenheitTemperature = (celsiusTemperature*9)/5 + 32;
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-    event.preventDefault()
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement = Math.round(celsiusTemperature);
-}
-
-
-let celsiusTemperature = null;
-
 //Forecast
 
 function formatDay(timestamp) {
@@ -161,10 +154,20 @@ function displayForecast(response) {
             />
             <div class="weather-forescast-temps">
                 <div class="max">
-                    <mark id="max1">${Math.round(forecastDay.temp.max)}</mark>
+                    <mark id="max1">
+                        ${Math.round(forecastDay.temp.max)}
+                        <sup id="now-units">
+                            <span class="forecast-units">ºC</span>
+                        </sup>
+                    </mark>
                 </div>
                 <div class="min">
-                    <mark id="min1">${Math.round(forecastDay.temp.min)}</mark>
+                    <mark id="min1">
+                        ${Math.round(forecastDay.temp.min)}
+                        <sup id="now-units">
+                            <span class="forecast-units">ºC</span>
+                        </sup>
+                    </mark>
                 </div>
             </div>
         </div>
