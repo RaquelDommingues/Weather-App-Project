@@ -114,9 +114,6 @@ function search(city) {
     let form = document.querySelector("#Search");
     form.addEventListener("click", handleSubmit);
 
-
-//Date
-
 function displayDate(response){
 
     let date = new Date();

@@ -16,15 +16,6 @@ body {
     border-radius: 30px;
 }
 
-.fa-solid {
-    color: #EC6E4C;
-}
-
-.fa-sun {
-    color: yellow;
-    font-size: 100px;
-}
-
 #city-input {
     padding-left: 20px;
     color: rgb(240, 248, 255, 0.8);
@@ -122,10 +113,6 @@ hr {
     font-size: 30px;
 }
 
-#current-emoji {
-    font-size: 80px;
-}
-
 #current-min, #current-max, #current-min-temperature, #current-max-temperature {
     text-align: center;
     font-size: 25px;
@@ -195,6 +182,8 @@ hr {
     top: -24px;
     left: -5px
 }
+
+/*Source*/
 
 #source {
     text-decoration: none;
