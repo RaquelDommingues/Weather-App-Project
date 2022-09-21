@@ -3,48 +3,64 @@
 let iconElement = document.querySelector("#current-emoji")
     iconElement.setAttribute("src", "");
 
-function displayWeatherCondition(response) {
-    document.querySelector("#city").innerHTML = response.data.name;
-    document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-    document.querySelector("#description").innerHTML = response.data.weather[0].description;
-    document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
-    let iconElement = document.querySelector("#current-emoji")
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description);
-    let now = new Date();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let day = days[now.getDay()];
-    let hours = now.getHours();
-    if (hours < 10) {
-        hours = `0${hours}`;
+    function searchLocation(position) {
+        let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayWeatherCondition);
     }
-    let minutes = now.getMinutes();
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-        
+    
+    function getCurrentLocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(searchLocation);
     }
-    let date = document.querySelector("#date");
-    date.innerHTML = `${day} ${hours}:${minutes}`;
-    getForecast(response.data.coord);
-  }
-  
-  function searchLocation(position) {
-    let apiKey = "2ff29bed3181c3526c35cc5408037f85";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeatherCondition);
-  }
-  
-  function getCurrentLocation() {
-    navigator.geolocation.getCurrentPosition(searchLocation);
-  }
-
-  let currentLocationButton = document.querySelector("#Locate");
-  currentLocationButton.addEventListener("click", getCurrentLocation);
-
-function getForecast(coordinates) {
-    let apiKey = "2ff29bed3181c3526c35cc5408037f85";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecast)
+    
+    let currentLocationButton = document.querySelector("#Locate");
+    currentLocationButton.addEventListener("click", getCurrentLocation);
+    
+    function displayWeatherCondition(response) {
+        let minTemperatureElement = document.querySelector("#current-min");
+        let maxTemperatureElement = document.querySelector("#current-max");
+        let minTempLabelElement = document.querySelector("#current-min-temperature");
+        let maxTempLabelElement = document.querySelector("#current-max-temperature");
+        let unitsElement = document.querySelector("#now-units");
+        let minUnitsElement = document.querySelector("#current-units-min");
+        let maxUnitsElement = document.querySelector("#current-units-max");
+        minTemperatureElement.innerHTML = Math.round(response.data.main.temp_min);
+        maxTemperatureElement.innerHTML = Math.round(response.data.main.temp_max);
+        minTempLabelElement.innerHTML = `Min`;
+        maxTempLabelElement.innerHTML = `Max`;
+        unitsElement.innerHTML = `ºC`;
+        minUnitsElement.innerHTML = `ºC`;
+        maxUnitsElement.innerHTML = `ºC`;
+        document.querySelector("#intro").innerHTML="";       
+        document.querySelector("#city").innerHTML = response.data.name;
+        document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+        document.querySelector("#description").innerHTML = response.data.weather[0].description;
+        document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+        let iconElement = document.querySelector("#current-emoji")
+        iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+        iconElement.setAttribute("alt", response.data.weather[0].description);
+        let now = new Date();
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let day = days[now.getDay()];
+        let hours = now.getHours();
+        if (hours < 10) {
+            hours = `0${hours}`;
+        }
+        let minutes = now.getMinutes();
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+            
+        }
+        let date = document.querySelector("#date");
+        date.innerHTML = `${day} ${hours}:${minutes}`;
+        getForecast(response.data.coord);
+      }
+      
+    function getForecast(coordinates) {
+        let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayForecast)
 }
 
 function displayTemperature(response) {
@@ -73,6 +89,7 @@ function displayTemperature(response) {
     windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    document.querySelector("#intro").innerHTML="";
     let apiKey = "2ff29bed3181c3526c35cc5408037f85";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
@@ -94,8 +111,8 @@ function search(city) {
         search(cityInputElement.value);
     }
   
-    let form = document.querySelector("#searchBar");
-    form.addEventListener("submit", handleSubmit);
+    let form = document.querySelector("#Search");
+    form.addEventListener("click", handleSubmit);
 
 
 //Date

@@ -15,6 +15,16 @@ body {
     box-shadow: 0 0 5px 3px rgb(240, 248, 255, 0.25);
     border-radius: 30px;
 }
+
+.fa-solid {
+    color: #EC6E4C;
+}
+
+.fa-sun {
+    color: yellow;
+    font-size: 100px;
+}
+
 #city-input {
     padding-left: 20px;
     color: rgb(240, 248, 255, 0.8);
