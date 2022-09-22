@@ -1,10 +1,14 @@
 body {
     height: 100vh;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    margin: 50px;
     color: aliceblue;
     font-family: 'Comfortaa', cursive;
     text-align: center;
+}
+
+.wrapper {
+    margin: 0 auto; 
+    width: 1200px;
 }
 
 .weather-app {
@@ -47,7 +51,7 @@ input::placeholder {
 
 #Search {
     position: relative;
-    left: -20px;
+    left: -10px;
     width: 125px;
 	height: 40px;
 	cursor: pointer;

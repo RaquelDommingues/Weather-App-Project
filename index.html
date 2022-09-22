@@ -19,83 +19,85 @@
     <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="weather-app">
-            <form id="searchBar" class="mb-5">
+    <div class="wrapper">
+        <div class="container">
+            <div class="weather-app">
+                <form id="searchBar" class="mb-5">
+                    <div class="row">
+                        <div class="col-9">
+                            <input 
+                            type="search" 
+                            placeholder="Location"
+                            autocomplete="off"
+                            class="form-control"
+                            id="city-input"/>
+                        </div>
+                        <div class="col-3">
+                            <button  id="Search" type="submit">Search</button>
+                            <button  id="Locate" type="click">Locate me</button>
+                        </div>
+                    </div>
+                </form>
+                <h1 id="city">Weather App</h1>
+                <ul>
+                    <li id="date">
+                    </li>
+                    <li id="wind">
+                    </li>
+                    <li id="description">
+                    </li>
+                    <li>
+                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" id="current-emoji">
+                    </li>
+                </ul>
                 <div class="row">
-                    <div class="col-9">
-                        <input 
-                        type="search" 
-                        placeholder="Location"
-                        autocomplete="off"
-                        class="form-control"
-                        id="city-input"/>
+                    <div class="col-4">
+                        <ul>
+                            <li id="current-min-temperature">
+                            </li>
+                            <li>
+                                <span id="current-min"></span>
+                                <sup class="current-units">
+                                    <span id="current-units-min"></span>
+                                </sup>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-3">
-                        <button  id="Search" type="submit">Search</button>
-                        <button  id="Locate" type="click">Locate me</button>
+                    <div class="col-4">
+                        <ul id="current-temperature">
+                            <li>
+                                <span id="temperature"></span>
+                                <sup id="now-units">
+                                    <span id="current-units"></span>
+                                </sup>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="col-4">
+                        <ul>
+                            <li id="current-max-temperature">
+                            </li>
+                            <li>
+                                <span id="current-max"></span>
+                                <sup class="current-units">
+                                    <span id="current-units-max"></span>
+                                </sup>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr style="width: 95%;">
+                    <br>
+                <div class="weather-forecast" id="forecast">
                 </div>
-            </form>
-            <h1 id="city">Weather App</h1>
-            <ul>
-                <li id="date">
-                </li>
-                <li id="wind">
-                </li>
-                <li id="description">
-                </li>
-                <li>
-                    <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" id="current-emoji">
-                </li>
-            </ul>
-            <div class="row">
-                <div class="col-4">
-                    <ul>
-                        <li id="current-min-temperature">
-                        </li>
-                        <li>
-                            <span id="current-min"></span>
-                            <sup class="current-units">
-                                <span id="current-units-min"></span>
-                            </sup>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <ul id="current-temperature">
-                        <li>
-                            <span id="temperature"></span>
-                            <sup id="now-units">
-                                <span id="current-units"></span>
-                            </sup>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <ul>
-                        <li id="current-max-temperature">
-                        </li>
-                        <li>
-                            <span id="current-max"></span>
-                            <sup class="current-units">
-                                <span id="current-units-max"></span>
-                            </sup>
-                        </li>
-                    </ul>
-                </div>
-                <hr style="width: 95%;">
+            </div>
+            <div id="intro">
+                <img src="./src/media/sun.gif" width="100px">
                 <br>
-            <div class="weather-forecast" id="forecast">
+                <em>Wherever you go, no matter what the weather, always bring your own sunshine.</em>
             </div>
         </div>
-        <div id="intro">
-            <img src="./src/media/sun.gif" width="100px">
-            <br>
-            <em>Wherever you go, no matter what the weather, always bring your own sunshine.</em>
-        </div>
+        <p>Coded by <a id = "source" href="https://github.com/RaquelDommingues/Weather-App">Raquel Domingues</a></p></a>
     </div>
-    <p>Coded by <a id = "source" href="https://github.com/RaquelDommingues/Weather-App">Raquel Domingues</a></p></a>
     <script src="src/app.js"></script>
 </body>
 </html>
