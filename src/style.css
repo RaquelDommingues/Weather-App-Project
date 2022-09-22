@@ -7,8 +7,7 @@ body {
 }
 
 .wrapper {
-    margin: 0 auto; 
-    width: 1200px;
+    width: 120vw;
 }
 
 .weather-app {
@@ -50,8 +49,6 @@ input::placeholder {
 }
 
 #Search {
-    position: relative;
-    left: -10px;
     width: 125px;
 	height: 40px;
 	cursor: pointer;
