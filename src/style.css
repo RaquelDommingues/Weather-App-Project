@@ -4,6 +4,8 @@ body {
     color: aliceblue;
     font-family: 'Comfortaa', cursive;
     text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .wrapper {
@@ -11,7 +13,6 @@ body {
 }
 
 .weather-app {
-    max-width: 600 px;
     margin: 30px auto;
     padding: 20px;
     text-align: center;
@@ -39,7 +40,6 @@ input::placeholder {
 }
 
 #Locate:hover, #Search:hover {
-	background-position: left;
 	color: white;
 	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
@@ -49,7 +49,7 @@ input::placeholder {
 }
 
 #Search {
-    width: 125px;
+    width: 110px;
 	height: 40px;
 	cursor: pointer;
 	border: none;
@@ -66,7 +66,7 @@ input::placeholder {
 }
 
 #Locate {
-    width: 125px;
+    width: 110px;
 	height: 40px;
 	cursor: pointer;
 	border: none;
